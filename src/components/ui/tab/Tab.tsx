@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect } from "react";
+import React, { createContext, useContext } from "react";
 
 const TabContext = createContext<TabProps>({ currentTab: 0 });
 
@@ -14,28 +14,33 @@ export default function Tab({ currentTab, onChange, children }: TabProps) {
 
 Tab.HeadsContainer = ({ children }: { children: React.ReactNode }) => {
   //tab.head container is the wrapper of the tab nav head
-  return <div className="headcontainer">{children}</div>;
+  return (
+    <div className="headcontainer border-b-2 border-b-[#ddd]">{children}</div>
+  );
 };
 
-Tab.Item = ({ label, index }: { label: string; index: number }) => {
+const Item = ({ label, index }: { label: string; index: number }) => {
   const { currentTab, onChange } = useContext(TabContext);
-
   return (
     <div
       onClick={() => onChange(index)}
-      className={`tabitem ${currentTab === index ? "active" : null}`}
+      className={`text-[15px] m-0 p-0 font-sans text-tab-text leading-5 cursor-pointer py-3 px-7 ${
+        currentTab === index ? "active border-b-2 border-b-primary" : null
+      }`}
     >
       {label}
     </div>
   );
 };
 
+Tab.Item = Item;
+
 Tab.ContentContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div className="contentcontainer">{children}</div>;
+  return <div className="contentcontainer -mt-1">{children}</div>;
 };
 /////////////////////////////////////////////////
 
-Tab.ContentItem = ({
+const ContentItem = ({
   index,
   children,
 }: {
@@ -48,3 +53,5 @@ Tab.ContentItem = ({
     <div className="contentitem">{children}</div>
   ) : null;
 };
+
+Tab.ContentItem = ContentItem;

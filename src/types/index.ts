@@ -1,3 +1,12 @@
+interface CardDisplayType {
+  data: [
+    { cardTitle: string; amount: string; increment: number },
+    { cardTitle: string; amount: string; increment: number },
+    { cardTitle: string; amount: string; increment: number },
+    { cardTitle: string; amount: string; increment: number }
+  ];
+}
+
 interface Transaction {
   id: string;
   date: string;
@@ -30,4 +39,23 @@ interface AvatarGroupProps {
     imageUrl: string;
   }[];
   maxVisible?: number;
+}
+
+interface TabNavProps {
+  tabTitle: string;
+  tabId: string;
+  activeTab: string;
+  changeTab: (tab: string) => void;
+}
+
+interface TabContentProps {
+  children: React.ReactNode;
+  contentId: string;
+  activeTab: string;
+}
+
+interface CardProps {
+  cardTitle: string;
+  totalAmount: string;
+  percentage: string;
 }

@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -14,10 +14,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
@@ -26,29 +26,22 @@ body {
 }
 
 @theme {
-  --color-amazonBlue: #131921;
+  --color-tab-text: "#15272D";
+  --color-cardbg: "#38677629";
   --color-lightText: #ccc;
-  --color-amazonLight: #232f3e;
-  --color-quantity_box: #f0f2f2;
-  --color-footerBottom: #131a22;
-  --color-amazonYellow: #fcd814;
-  --color-amazonYellowDark: #f7ca00;
-  --color-amazonOrange: #fba41c;
-  --color-amazonOrangeDark: #fa8900;
-  --color-amazonGreen: #7fda69;
   --color-primary: #3a6c7b;
   --color-lightash: #7d8184;
 }
 
-.avatar-group {
+/* .avatar-group {
   display: flex;
   align-items: center;
   font-family: sans-serif;
   font-size: 14px;
   color: #555;
-}
+} */
 
-.avatars {
+/* .avatars {
   display: flex;
   margin-right: 8px;
   position: relative;
@@ -71,4 +64,4 @@ body {
 
 .label {
   white-space: nowrap;
-}
+} */

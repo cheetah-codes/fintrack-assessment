@@ -3,7 +3,7 @@ import Search from "./Search";
 
 const Header = () => {
   return (
-    <header className="flex justify-between">
+    <header className="flex justify-between mt-3 sm:justify-between">
       <div className="flex gap-7 align-center">
         <div className="py-[10px] pl-[3px]">
           <Image
@@ -18,7 +18,7 @@ const Header = () => {
       </div>
 
       {/* second half */}
-      <div className="flex align-center gap-7">
+      <div className="flex align-center gap-7 ">
         <Search />
 
         <Image

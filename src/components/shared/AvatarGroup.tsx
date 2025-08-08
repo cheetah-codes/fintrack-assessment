@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const AvatarGroup: React.FC<AvatarGroupProps> = ({ users, maxVisible = 4 }) => {
   const visibleUsers = users.slice(0, maxVisible);
   const remainingCount = users.length - maxVisible;
@@ -12,14 +13,14 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({ users, maxVisible = 4 }) => {
     remainingCount > 0 ? `${names} +${remainingCount} others` : names;
 
   return (
-    <div className="avatar-group flex items-center font-sans font-[14px] text-textLight">
-      <div className="avatars">
+    <div className="font-sans flex items-center text-sm text-[#15272D9E] ml-2.5">
+      <div className="flex mr-2 relative">
         {visibleUsers.map((user, index) => (
           <img
             key={index}
             src={user.imageUrl}
             alt={user.name}
-            className="avatar"
+            className="avatar w-8 h-8 rounded-full border-0.5 border-white relative -ml-2.5 object-cover shadow-[0_0_0_1px_#ccc]"
             style={{ zIndex: visibleUsers.length - index }}
           />
         ))}
@@ -30,36 +31,3 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({ users, maxVisible = 4 }) => {
 };
 
 export default AvatarGroup;
-
-// .avatar-group {
-//   display: flex;
-//   align-items: center;
-//   font-family: sans-serif;
-//   font-size: 14px;
-//   color: #555;
-// }
-
-// .avatars {
-//   display: flex;
-//   margin-right: 8px;
-//   position: relative;
-// }
-
-// .avatar {
-//   width: 32px;
-//   height: 32px;
-//   border-radius: 50%;
-//   border: 2px solid white;
-//   object-fit: cover;
-//   position: relative;
-//   margin-left: -10px;
-//   box-shadow: 0 0 0 1px #ccc;
-// }
-
-// .avatar:first-child {
-//   margin-left: 0;
-// }
-
-// .label {
-//   white-space: nowrap;
-// }

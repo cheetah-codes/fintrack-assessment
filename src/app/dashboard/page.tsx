@@ -1,45 +1,49 @@
 "use client";
 
-import AvatarGroup from "@/components/AvatarGroup";
-import Tab from "@/components/Tab";
+import OverviewTab from "@/components/OverViewTab";
+import AvatarGroup from "@/components/shared/AvatarGroup";
+import StatusBadge from "@/components/shared/StatusBadge";
+import Tab from "@/components/ui/tab/Tab";
+import { users } from "@/utils";
 import React, { useState } from "react";
-
-const page = () => {
+import Image from "next/image";
+import kebabMenu from "../../../public/kebab-menu.svg";
+import caretDown from "../../../public/caret-down.svg";
+const DashboardPage = () => {
   const [currentTabIndex, setIndex] = useState(0);
-  // const users = [
-  //   { name: "Ava", imageUrl: "https://i.pravatar.cc/100?img=1" },
-  //   { name: "Liam", imageUrl: "https://i.pravatar.cc/100?img=2" },
-  //   { name: "Noah", imageUrl: "https://i.pravatar.cc/100?img=3" },
-  //   { name: "Olivia", imageUrl: "https://i.pravatar.cc/100?img=4" },
-  //   { name: "Emma", imageUrl: "https://i.pravatar.cc/100?img=5" },
-  // ];
-
-  const users = [
-    { name: "Ava", imageUrl: "https://i.pravatar.cc/150?img=1" },
-    { name: "Liam", imageUrl: "https://i.pravatar.cc/150?img=2" },
-    { name: "Noah", imageUrl: "https://i.pravatar.cc/150?img=3" },
-    { name: "Emma", imageUrl: "https://i.pravatar.cc/150?img=4" },
-    { name: "Olivia", imageUrl: "https://i.pravatar.cc/150?img=5" },
-    { name: "Sophia", imageUrl: "https://i.pravatar.cc/150?img=6" },
-    { name: "Mason", imageUrl: "https://i.pravatar.cc/150?img=7" },
-    { name: "Ethan", imageUrl: "https://i.pravatar.cc/150?img=8" },
-    { name: "Isabella", imageUrl: "https://i.pravatar.cc/150?img=9" },
-    { name: "Lucas", imageUrl: "https://i.pravatar.cc/150?img=10" },
-    { name: "Charlotte", imageUrl: "https://i.pravatar.cc/150?img=11" },
-    { name: "Amelia", imageUrl: "https://i.pravatar.cc/150?img=12" },
-    { name: "James", imageUrl: "https://i.pravatar.cc/150?img=13" },
-    { name: "Harper", imageUrl: "https://i.pravatar.cc/150?img=14" },
-    { name: "Benjamin", imageUrl: "https://i.pravatar.cc/150?img=15" },
-    { name: "Emma", imageUrl: "https://i.pravatar.cc/100?img=5" },
-  ];
 
   const handleChange = (newIndex: number) => {
     setIndex(newIndex);
   };
 
   return (
-    <div>
-      page in dashboard
+    <div className="w-full pl-12">
+      <div className="flex">
+        <div className="flex items-center">
+          <h3 className="font-bold text-[34px] text-[#1B2528] mr-4">
+            Wallet Ledger
+          </h3>
+
+          <Image src={caretDown} alt="caret" className="-ml-4" />
+
+          <StatusBadge variant="positive" statusText="Active" />
+        </div>
+
+        <div className="flex items-center ml-auto">
+          <button className="bg-[#4B8B9F] text-[15px] font-medium leading-5 mr-3 py-2 px-4.5 rounded-2xl cursor-pointer">
+            Share
+          </button>
+          <button className="flex justify-center items-center w-9 h-9 rounded-full border-[1.5px] border-[#49656E33] cursor-pointer">
+            <Image src={kebabMenu} alt="kebab" />
+          </button>
+        </div>
+      </div>
+      <div className="flex items-center my-7">
+        <AvatarGroup users={users} />
+      </div>
+
+      {/* //////tab section */}
+
       <Tab currentTab={currentTabIndex} onChange={handleChange}>
         <Tab.HeadsContainer>
           <div className="flex gap-12">
@@ -51,8 +55,9 @@ const page = () => {
 
         <Tab.ContentContainer>
           <Tab.ContentItem index={0}>
-            <h1>Overview tab</h1>
-            <AvatarGroup users={users} />
+            {/* <AvatarGroup users={users} /> */}
+
+            <OverviewTab />
           </Tab.ContentItem>
 
           <Tab.ContentItem index={1}>
@@ -64,4 +69,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default DashboardPage;
