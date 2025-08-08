@@ -23,3 +23,11 @@ interface TabProps {
   onChange?: any;
   children?: React.ReactNode;
 }
+
+interface AvatarGroupProps {
+  users: {
+    name: string;
+    imageUrl: string;
+  }[];
+  maxVisible?: number;
+}
