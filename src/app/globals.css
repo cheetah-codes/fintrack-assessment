@@ -24,3 +24,51 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  --color-amazonBlue: #131921;
+  --color-lightText: #ccc;
+  --color-amazonLight: #232f3e;
+  --color-quantity_box: #f0f2f2;
+  --color-footerBottom: #131a22;
+  --color-amazonYellow: #fcd814;
+  --color-amazonYellowDark: #f7ca00;
+  --color-amazonOrange: #fba41c;
+  --color-amazonOrangeDark: #fa8900;
+  --color-amazonGreen: #7fda69;
+  --color-primary: #3a6c7b;
+  --color-lightash: #7d8184;
+}
+
+.avatar-group {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+.avatars {
+  display: flex;
+  margin-right: 8px;
+  position: relative;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  position: relative;
+  margin-left: -10px;
+  box-shadow: 0 0 0 1px #ccc;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.label {
+  white-space: nowrap;
+}
