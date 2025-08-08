@@ -6,6 +6,13 @@ import React, { useState } from "react";
 
 const page = () => {
   const [currentTabIndex, setIndex] = useState(0);
+  const users = [
+    { name: "Ava", imageUrl: "https://i.pravatar.cc/100?img=1" },
+    { name: "Liam", imageUrl: "https://i.pravatar.cc/100?img=2" },
+    { name: "Noah", imageUrl: "https://i.pravatar.cc/100?img=3" },
+    { name: "Olivia", imageUrl: "https://i.pravatar.cc/100?img=4" },
+    { name: "Emma", imageUrl: "https://i.pravatar.cc/100?img=5" },
+  ];
 
   const handleChange = (newIndex: number) => {
     setIndex(newIndex);
@@ -34,7 +41,7 @@ const page = () => {
           </Tab.ContentItem>
         </Tab.ContentContainer>
       </Tab>
-      <AvatarGroup users={({"peter", "/widget-Icon.svg"},{"nachettah", "/widget-Icon.svg"},{"nachettah", "/widget-Icon.svg"})} />
+      <AvatarGroup users={users} />
     </div>
   );
 };
